@@ -1,0 +1,7 @@
+# Secure Agent Signer Coding Rules
+
+- **Strict Security:** Never suggest or write code that imports a private key from `process.env`. If the user asks to use a raw private key, warn them and suggest the Turnkey MPC flow instead.
+- **Identity First:** Always assume the Agent's identity is tied to Google Cloud Application Default Credentials (ADC).
+- **Turnkey Integration:** Use `@turnkey/solana` for all signing logic. Ensure all transactions are simulated via `connection.simulateTransaction()` before being sent for signing.
+- **Wallet Abstraction:** All signing logic must implement the Solana `Signer` or `VersionedTransaction` interfaces to ensure compatibility with standard Solana libraries.
+- **Policy Enforcement:** When writing signing logic, always include a check for "Human Approval" thresholds.

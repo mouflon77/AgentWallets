@@ -1,0 +1,85 @@
+{
+  "name": "agentwallets",
+  "version": "1.0.0",
+  "description": "Agent Solana Wallet — MPC signing for AI agents (Turnkey + GCP + Passkey)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "safe-agent-setup": "./dist/cli/setup.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./browser": {
+      "types": "./dist/core/auth/user.d.ts",
+      "default": "./dist/core/auth/user.js"
+    },
+    "./wallet": {
+      "types": "./dist/core/turnkey-solana-wallet.d.ts",
+      "default": "./dist/core/turnkey-solana-wallet.js"
+    },
+    "./signer": {
+      "types": "./dist/core/adapter.d.ts",
+      "default": "./dist/core/adapter.js"
+    },
+    "./link": {
+      "types": "./dist/core/link-payload.d.ts",
+      "default": "./dist/core/link-payload.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "setup": "ts-node src/cli/setup.ts",
+    "link-device": "ts-node src/cli/link-device.ts",
+    "gcp:bootstrap": "ts-node src/cli/bootstrap-secrets.ts",
+    "start": "node dist/index.js",
+    "dev:portal": "npm run dev --prefix portal",
+    "dev:guardian": "npm run dev:portal",
+    "portal:install": "npm install --prefix portal",
+    "guardian:install": "npm run portal:install",
+    "portal:build": "npm run build --prefix portal",
+    "guardian:build": "npm run portal:build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "agent-solana-wallet",
+    "solana",
+    "turnkey",
+    "mpc",
+    "gcp",
+    "agent",
+    "passkey",
+    "webauthn",
+    "ai-agent"
+  ],
+  "author": "ChewieTech (https://chewie.io)",
+  "license": "ISC",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "overrides": {
+    "ws": "8.21.0",
+    "jayson": {
+      "uuid": "^11.1.1"
+    }
+  },
+  "dependencies": {
+    "@google-cloud/secret-manager": "^6.2.0",
+    "@solana/web3.js": "^1.98.4",
+    "@turnkey/crypto": "^2.8.6",
+    "@turnkey/sdk-browser": "^6.1.1",
+    "@turnkey/sdk-server": "^6.1.1",
+    "@turnkey/solana": "^1.1.31",
+    "qrcode-terminal": "^0.12.0",
+    "openai": "^4.104.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.0",
+    "@types/qrcode-terminal": "^0.12.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  }
+}

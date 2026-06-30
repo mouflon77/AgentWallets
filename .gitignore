@@ -1,0 +1,30 @@
+# dependencies
+node_modules/
+**/node_modules/
+
+# build output — never commit compiled SDK (npm run build locally / in CI)
+dist/
+**/dist/
+
+# Next.js
+.next/
+**/.next/
+out/
+
+# env / secrets
+.env
+.env.local
+.env.*.local
+*.pem
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+
+# stale example app (canonical app is portal/)
+examples/
+
+# misc
+*.tsbuildinfo
+.npm-cache/

@@ -1,0 +1,40 @@
+{
+  "name": "agent-approval-portal",
+  "version": "0.1.0",
+  "description": "Mobile approval portal for Agent Solana Wallet — Face ID / Touch ID",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.98.4",
+    "@turnkey/crypto": "^2.8.6",
+    "@turnkey/sdk-browser": "^6.1.1",
+    "@turnkey/sdk-server": "^6.1.1",
+    "@turnkey/solana": "^1.1.31",
+    "agentwallets": "file:../..",
+    "next": "16.2.9",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.9",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "overrides": {
+    "ws": "8.21.0",
+    "jayson": {
+      "uuid": "^11.1.1"
+    },
+    "postcss": "8.5.10"
+  }
+}

@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0b1020;
+  --foreground: #eef2ff;
+  --card: #121a2f;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --accent-strong: #0ea5e9;
+  --success: #34d399;
+  --border: #1e293b;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+}
+
+body {
+  background: radial-gradient(circle at top, #172554 0%, var(--background) 45%);
+  color: var(--foreground);
+  min-height: 100vh;
+}
+
+.card {
+  background: color-mix(in oklab, var(--card) 92%, white 8%);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.75rem;
+  padding: 0.65rem 1rem;
+  font-weight: 600;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #04101f;
+}
+
+.btn-secondary {
+  background: #1e293b;
+  color: var(--foreground);
+  border: 1px solid var(--border);
+}
+
+.btn-success {
+  background: #065f46;
+  color: #ecfdf5;
+  border: 1px solid #047857;
+}
+
+.btn:not(:disabled):hover {
+  transform: translateY(-1px);
+}
+
+.input {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  background: #0f172a;
+  color: var(--foreground);
+  padding: 0.65rem 0.85rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.15rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-pending {
+  background: #422006;
+  color: #fde68a;
+}
+
+.badge-approved {
+  background: #064e3b;
+  color: #a7f3d0;
+}
