@@ -16,7 +16,7 @@
     "@turnkey/sdk-server": "^6.1.1",
     "@turnkey/solana": "^1.1.31",
     "agentwallets": "file:../..",
-    "next": "16.2.9",
+    "next": "16.3.4",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },
